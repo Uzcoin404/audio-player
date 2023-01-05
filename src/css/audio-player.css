@@ -1,0 +1,49 @@
+body {
+    background-color: #000;
+    font-family: sans-serif;
+}
+
+.audio_player {
+    position: fixed;
+    top: 500px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #111;
+    width: 80%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.audio_controls, .audio_actions{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.credits {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #fff;
+    pointer-events: none;
+}
+.audio_timeline {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    position: relative;
+    margin: 0 15px;
+}
+#audio_progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: blue;
+    z-index: -1;
+    pointer-events: none;
+}

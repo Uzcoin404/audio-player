@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/lib/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/audio-player.css">
+    <title>Audio-Project</title>
+</head>
+
+<body>
+
+    <!-- <div class="button1  btn">Degrees</div>
+    <div class="button2 btn">Foundation</div>
+    <div class="button3 btn">Lightning</div>
+    <div class="button4  btn">Oblivion</div> -->
+
+    <div class="player_wrapper">
+        <div class="audio_player" id="audioPlayer">
+            <div class="audio_controls">
+                <button id="play_btn">play</button>
+                <button id="forward_btn">next</button>
+            </div>
+            <div class="audio_timeline">
+                <div class="credits">
+                    <p>VIRTUA | <span id="playerArtist">FRACTAL FANTASY</span></p>
+                    <div>
+                        <span id="audioTime">0:00</span>
+                        <span> - </span>
+                        <p id="playerDescription"></p>
+                    </div>
+                    <div id="titleContainer"></div>
+                </div>
+                <div id="audio_progress"></div>
+            </div>
+            <div class="audio_actions">
+                <button id="download_btn">download</button>
+                <button id="volume_btn">volume</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/js/audio-list.js"></script>
+    <script src="./src/js/audio-player.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

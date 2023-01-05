@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+}
+.webgl{
+    position: fixed;
+    height: 100% !important;
+    width: 100% !important;
+    z-index: -1000;
+}
+
+.audio{
+    position: absolute;
+    /* z-index: 10000000000000; */
+    width: 500px;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.button1{
+    position: absolute;
+    left: 35%;
+    top: 87%;
+    transform: translate(-50% , -50%);
+    color: white;
+padding: 12px 15px;
+font-size: 18px;
+border: 1px solid white;
+border-radius: 5px;
+}
+
+.button2{
+    position: absolute;
+    left: 45%;
+    top: 87%;
+    transform: translate(-50% , -50%);
+    color: white;
+padding: 12px 15px;
+font-size: 18px;
+border: 1px solid white;
+border-radius: 5px;
+}
+.button3{
+    position: absolute;
+    left: 55%;
+    top: 87%;
+    transform: translate(-50% , -50%);
+    color: white;
+padding: 12px 15px;
+font-size: 18px;
+border: 1px solid white;
+border-radius: 5px;
+}
+
+
+.button4{
+    position: absolute;
+    left: 65%;
+    top: 87%;
+    transform: translate(-50% , -50%);
+    color: white;
+padding: 12px 15px;
+font-size: 18px;
+border: 1px solid white;
+border-radius: 5px;
+}
+.btn{
+    transition: all ease 0.5s;
+    cursor: pointer;
+}
+.btn:hover{
+background-color: white;
+color: black;
+
+}
+
+
+@media (max-width : 900px) {
+    .btn{
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+.button1{
+    left: 20%;
+}
+.button2{
+    left: 70%;
+}
+.button3{
+    top: 95%;
+    left: 20%;
+}
+.button4{
+    top: 95%;
+    left: 70%;
+}
+
+
+.audio{
+    width: 270px;
+}
+
+
+
+
+
+
+}
