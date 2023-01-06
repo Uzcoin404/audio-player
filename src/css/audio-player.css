@@ -113,3 +113,23 @@ body {
         opacity: 0;
     }
 }
+
+@media (max-width: 576px) {
+    .audio_player{
+        width: 100%;
+        padding: 0 10px;
+    }
+    .audio_btn i{
+        font-size: 20px;
+    }
+    #play_btn{
+        width: 45px;
+        margin-left: 5px;
+    }
+    .audio_timeline{
+        margin: 0 10px;
+    }
+    .audio_actions{
+        margin-right: 10px;
+    }
+}

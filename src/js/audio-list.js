@@ -1,26 +1,26 @@
 let audioList = [
     {
-        name: "Fairytale",
-        artist: "Alexander Rybak",
-        description: "sfsdfsdf",
+        name: "_E",
+        artist: "Unknown",
+        description: "Lorem ipsum dolor sit amet.",
         src: "../../audio/_E.mp3",
     },
     {
-        name: "Impossible",
-        artist: "James Arthur",
-        description: "",
+        name: "FOUNDATION master",
+        artist: "Unknown",
+        description: "Lorem ipsum dolor sit amet.",
         src: "../../audio/FOUNDATION-master.mp3",
     },
     {
-        name: "Landscape",
-        artist: "Jarico",
-        description: "",
+        name: "lightning",
+        artist: "Unknown",
+        description: "Lorem ipsum dolor sit amet.",
         src: "../../audio/lightning.mp3",
     },
     {
-        name: "Rise up",
-        artist: "TheFatRat",
-        description: "",
+        name: "Oblivion master",
+        artist: "Unknown",
+        description: "Lorem ipsum dolor sit amet.",
         src: "../../audio/Oblivion-master.mp3",
     },
 ];
