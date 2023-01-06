@@ -14,13 +14,52 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 15px;
+    border-radius: 5px;
+}
+.audio_btn{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #555;
+    cursor: pointer;
+}
+.audio_btn:hover{
+    color: #333;
+}
+.audio_btn i{
+    font-size: 25px;
+    transition: .3s;
+}
+.audio_btn:active i{
+    transform: scale(0.8);
+}
+#play_btn{
+    width: 60px;
+}
+.audio_actions .audio_btn{
+    height: auto;
+    padding: 5px;
+}
+.audio_actions .audio_btn i{
+    font-size: 20px;
+}
+.audio_actions{
+    margin-right: 15px;
+}
+#volume_btn{
+    width: 33px;
 }
 
-.audio_controls, .audio_actions{
+.audio_controls,
+.audio_actions {
     flex-grow: 1;
     display: flex;
     align-items: center;
+    height: 100%;
 }
 .credits {
     position: absolute;
@@ -29,6 +68,8 @@ body {
     transform: translateY(-50%);
     color: #fff;
     pointer-events: none;
+    font-size: 10px;
+    line-height: 12px;
 }
 .audio_timeline {
     width: 100%;
@@ -36,6 +77,8 @@ body {
     flex-grow: 1;
     position: relative;
     margin: 0 15px;
+    cursor: pointer;
+    border-right: 1px solid #555;
 }
 #audio_progress {
     position: absolute;
@@ -46,4 +89,27 @@ body {
     background-color: blue;
     z-index: -1;
     pointer-events: none;
+}
+.credits_details{
+    display: flex;
+    align-items: center;
+}
+.credits_middle_line{
+    margin: 0 5px;
+}
+#playerDescription{
+    animation-name: fade;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-direction: alternate;
+}
+@keyframes fade {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

@@ -21,15 +21,19 @@
     <div class="player_wrapper">
         <div class="audio_player" id="audioPlayer">
             <div class="audio_controls">
-                <button id="play_btn">play</button>
-                <button id="forward_btn">next</button>
+                <button class="audio_btn" id="play_btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="audio_btn" id="forward_btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
             </div>
             <div class="audio_timeline">
                 <div class="credits">
                     <p>VIRTUA | <span id="playerArtist">FRACTAL FANTASY</span></p>
-                    <div>
+                    <div class="credits_details">
                         <span id="audioTime">0:00</span>
-                        <span> - </span>
+                        <span class="credits_middle_line"> - </span>
                         <p id="playerDescription"></p>
                     </div>
                     <div id="titleContainer"></div>
@@ -37,15 +41,19 @@
                 <div id="audio_progress"></div>
             </div>
             <div class="audio_actions">
-                <button id="download_btn">download</button>
-                <button id="volume_btn">volume</button>
+                <button class="audio_btn" id="download_btn">
+                    <i class="fas fa-arrow-alt-to-bottom"></i>
+                </button>
+                <button class="audio_btn" id="volume_btn">
+                    <i class="fas fa-volume-up"></i>
+                </button>
             </div>
         </div>
     </div>
 
     <script src="./src/js/audio-list.js"></script>
     <script src="./src/js/audio-player.js"></script>
-    <script type="module" src="./src/js/main.js"></script>
+    <!-- <script type="module" src="./src/js/main.js"></script> -->
 </body>
 
 </html>

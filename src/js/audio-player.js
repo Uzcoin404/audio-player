@@ -5,12 +5,16 @@ const audioPlayer = document.querySelector("#audioPlayer"),
     playerDescription = audioPlayer.querySelector("#playerDescription"),
     titleContainer = audioPlayer.querySelector("#titleContainer"),
     playPauseBtn = audioPlayer.querySelector("#play_btn"),
+    playPauseBtnIcon = playPauseBtn.querySelector("i"),
     volumeBtn = audioPlayer.querySelector("#volume_btn"),
+    volumeBtnIcon = volumeBtn.querySelector("i"),
     downloadBtn = audioPlayer.querySelector("#download_btn"),
     forwardBtn = audioPlayer.querySelector("#forward_btn");
 
-let musicIndex = (audioCurrentTime = 0),
-    isPlaying = (isMouseDown = false);
+let musicIndex = 0,
+    audioCurrentTime = 0,
+    isPlaying = false,
+    isMouseDown = false;
 
 const audio = new Audio(audioList[musicIndex].src);
 
@@ -25,11 +29,11 @@ initAudioDetails();
 
 audio.onpause = function onAudioPause() {
     isPlaying = false;
-    playPauseBtn.innerHTML = "play";
+    playPauseBtnIcon.className = "fas fa-play";
 };
 audio.onplay = function onAudioPlay() {
     isPlaying = true;
-    playPauseBtn.innerHTML = "pause";
+    playPauseBtnIcon.className = "fas fa-pause";
 };
 
 playPauseBtn.addEventListener("click", function () {
@@ -53,35 +57,37 @@ forwardBtn.addEventListener("click", function () {
 
 audioTimeline.addEventListener("mousedown", mouseDown);
 audioTimeline.addEventListener("mousemove", mouseMove);
-audioTimeline.addEventListener("mouseup", mouseUp);
-// audioTimeline.addEventListener("mouseleave", (e) => mouseUp(e, true));
+document.addEventListener("mouseup", (e) => mouseUp(e, true));
+audioTimeline.addEventListener("mouseleave", mouseUp);
 
-audioTimeline.addEventListener("touchstart", mouseDown);
-audioTimeline.addEventListener("touchmove", mouseMove);
-audioTimeline.addEventListener("touchend", mouseUp);
-document.addEventListener("mouseleave", (e) => mouseUp(e, true));
+// audioTimeline.addEventListener("touchstart", mouseDown);
+// audioTimeline.addEventListener("touchmove", mouseMove);
+// audioTimeline.addEventListener("touchend", mouseUp);
 
 function mouseDown(e) {
     isMouseDown = true;
-    audio.pause();
     setProgressBar(e);
 }
 function mouseMove(e) {
     if (isMouseDown) {
+        console.log(e.offsetX);
         setProgressBar(e);
     }
 }
-function mouseUp(e, isLeave = false) {
-    isMouseDown = false;
-    console.log(e);
-    if (!isLeave) {
-        audio.play();
+function mouseUp(e, isDocMouseUp = false) {
+    if (isMouseDown && !isDocMouseUp) {
+        audio.currentTime =
+            (e.offsetX / audioTimeline.offsetWidth) * audio.duration;
+    } else if (isMouseDown && isDocMouseUp) {
+        audio.currentTime =
+            (parseFloat(audio_progress.style.width) / 100) * audio.duration;
     }
+    isMouseDown = false;
 }
 
 function setProgressBar(e) {
-    audio.currentTime =
-        (e.offsetX / audioTimeline.offsetWidth) * audio.duration;
+    audio_progress.style.width =
+        (e.offsetX / audioTimeline.offsetWidth) * 100 + "%";
 }
 
 audio.addEventListener("timeupdate", function () {
@@ -90,8 +96,10 @@ audio.addEventListener("timeupdate", function () {
 
     audioTime.innerHTML = `${minutes}:${seconds}`;
 
-    audio_progress.style.width =
-        (audio.currentTime / audio.duration) * 100 + "%";
+    if (!isMouseDown) {
+        audio_progress.style.width =
+            (audio.currentTime / audio.duration) * 100 + "%";
+    }
 });
 
 audio.addEventListener("ended", function () {
@@ -104,12 +112,15 @@ volumeBtn.addEventListener("click", function () {
     switch (audio.volume) {
         case 1:
             audio.volume = 0.5;
+            volumeBtnIcon.className = "fas fa-volume";
             break;
         case 0.5:
             audio.volume = 0;
+            volumeBtnIcon.className = "fas fa-volume-mute";
             break;
         default:
             audio.volume = 1;
+            volumeBtnIcon.className = "fas fa-volume-up";
             break;
     }
 });
@@ -127,7 +138,6 @@ document.addEventListener("keyup", function (e) {
         case 32:
             playPauseBtn.click();
             break;
-
         default:
             break;
     }
