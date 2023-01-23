@@ -1,5 +1,11 @@
 let audioList = [
     {
+        name: "Security",
+        artist: "Ecco2k",
+        description: "Lorem ipsum dolor sit amet.",
+        src: "../../audio/_E.mp3",
+    },
+    {
         name: "FOUNDATION master",
         artist: "Unknown",
         description: "Lorem ipsum dolor sit amet.",
