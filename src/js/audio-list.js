@@ -3,7 +3,7 @@ let audioList = [
         name: "Security",
         artist: "Ecco2k",
         description: "Lorem ipsum dolor sit amet.",
-        src: "audio/_E.mp3",
+        src: "audio/security.mp3",
     },
     {
         name: "FOUNDATION master",
