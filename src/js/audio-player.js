@@ -37,7 +37,6 @@ audio.onplay = function onAudioPlay() {
 };
 
 playPauseBtn.addEventListener("click", function () {
-    console.log(audio.paused);
     if (audio.paused) {
         audio.play();
     } else {
@@ -70,7 +69,6 @@ function mouseDown(e) {
 }
 function mouseMove(e) {
     if (isMouseDown) {
-        console.log(e.offsetX);
         setProgressBar(e);
     }
 }
